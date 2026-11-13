@@ -2,6 +2,7 @@ credentials.md
 
 mongod_only/
 replicaset_cmd/
+replicaset_config_files/
 
 # MongoDB runtime / db data files
 **/db/*.wt
