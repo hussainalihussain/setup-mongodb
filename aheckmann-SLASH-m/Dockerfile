@@ -15,14 +15,18 @@ RUN apt-get update && apt-get install -y \
     libssl3 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install MongoDB version manager (m)
+# Install MongoDB version manager
 RUN curl -fsSL \
     https://raw.githubusercontent.com/aheckmann/m/master/bin/m \
     -o /usr/local/bin/m \
     && chmod +x /usr/local/bin/m
 
-# Install MongoDB 8.0
-RUN m 8.0
+# Download and activate MongoDB 8.0
+RUN yes | m 8.0
+
+# Verify MongoDB installation
+RUN mongod --version \
+    && command -v mongod
 
 # Create MongoDB data directory
 RUN mkdir -p /data/db

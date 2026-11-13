@@ -1,0 +1,18 @@
+credentials.md
+
+mongod_only/
+replicaset_cmd/
+
+# MongoDB runtime / db data files
+**/db/*.wt
+**/db/mongod.lock
+**/db/journal/*
+**/db/WiredTiger*
+**/db/diagnostic.data/
+
+# Logs
+*.log
+*.log.*
+mongodb.log
+mongodb.log.*
+
